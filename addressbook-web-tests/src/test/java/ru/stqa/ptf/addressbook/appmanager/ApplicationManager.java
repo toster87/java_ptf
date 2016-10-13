@@ -12,7 +12,6 @@ public class ApplicationManager {
   ChromeDriver wd;
 
   private SessionHelper sessionHelper;
-
   private NavigationHelper navigationHelper;
   private GroupHelper groupHelper;
 

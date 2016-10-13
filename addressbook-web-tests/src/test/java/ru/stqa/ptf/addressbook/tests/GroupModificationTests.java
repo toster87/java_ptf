@@ -9,7 +9,7 @@ import ru.stqa.ptf.addressbook.model.GroupData;
 public class GroupModificationTests extends TestBase{
 
   @Test
-  public void testGroupeDeletion() {
+  public void testGroupDeletion() {
     app.getNavigationHelper().gotoGroupPage();
     app.getGroupHelper().selectGroup();
     app.getGroupHelper().initGroupModification();
