@@ -1,6 +1,5 @@
 package ru.stqa.ptf.addressbook.appmanager;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -43,11 +42,8 @@ public class ApplicationManager {
     return navigationHelper;
   }
 
-  public void gotoAddContact() {
-      wd.findElement(By.linkText("add new")).click();
-  }
-
   public ContactHelper getContactHelper() {
     return contactHelper;
   }
+
 }

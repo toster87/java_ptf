@@ -9,15 +9,20 @@ import ru.stqa.ptf.addressbook.model.ContactData;
  */
 public class ContactHelper extends HelperBase{
 
+  ChromeDriver wd;
+
   public ContactHelper(ChromeDriver wd) {
     super(wd);
 
   }
 
-  public void returnToHomePage() {wd.findElement(By.linkText("home page")).click();
+  public void returnToHomePage() {
+    click(By.linkText("home page"));
   }
 
-  public void submitContactCreation() {wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
+
+  public void submitContactCreation() {
+    click(By.xpath("//div[@id='content']/form/input[21]"));
   }
 
   public void fillContactForm(ContactData contactData) {
@@ -27,4 +32,15 @@ public class ContactHelper extends HelperBase{
     type(By.name("email"), contactData.getEmail());
   }
 
+  public void initContactModification() {
+    click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+  }
+
+  public void gotoAddContact() {
+      click (By.linkText("add new"));
+  }
+
+  public void updateContactModification() {
+    click(By.xpath("//div[@id='content']/form[1]/input[22]"));
+  }
 }
