@@ -32,4 +32,11 @@ public class HelperBase {
       return false;
     }
   }
+
+  /**
+   * Нажимаем Ок на алерте
+   */
+  public void alertOK() {
+    wd.switchTo().alert().accept();
+  }
 }

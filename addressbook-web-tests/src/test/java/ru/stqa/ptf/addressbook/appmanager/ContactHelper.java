@@ -9,7 +9,6 @@ import ru.stqa.ptf.addressbook.model.ContactData;
  */
 public class ContactHelper extends HelperBase{
 
-  ChromeDriver wd;
 
   public ContactHelper(ChromeDriver wd) {
     super(wd);
@@ -43,4 +42,15 @@ public class ContactHelper extends HelperBase{
   public void updateContactModification() {
     click(By.xpath("//div[@id='content']/form[1]/input[22]"));
   }
+
+  public void selectContact() {
+    click(By.name("selected[]"));
+
+  }
+
+  public void confirmDeletion() {
+    click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
+    alertOK();
+  }
+
 }
