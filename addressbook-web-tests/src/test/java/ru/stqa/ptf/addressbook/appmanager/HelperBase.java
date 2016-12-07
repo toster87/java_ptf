@@ -20,6 +20,14 @@ public class HelperBase {
     wd.findElement(locator).click();
   }
 
+  protected void findElementByCss(String cssSelector){
+    findElement(By.cssSelector(cssSelector));
+  }
+
+  private void findElement(By by) {
+    wd.findElement(by);
+  }
+
   protected void type(By locator, String text) {
     click(locator);
     if (text != null) {
@@ -52,6 +60,14 @@ public class HelperBase {
       return true;
     } catch (NoSuchElementException ex) {
       return false;
+    }
+  }
+
+  public void sleepSeconds(int seconds){
+    try {
+      Thread.sleep(seconds*1000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
     }
   }
 }

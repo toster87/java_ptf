@@ -51,14 +51,32 @@ public class ContactHelper extends HelperBase {
     click(By.xpath("//div[@id='content']/form[1]/input[22]"));
   }
 
-  public void selectContact() {
-    click(By.name("selected[]"));
+  public void selectContact() {click(By.name("selected[]"));
 
   }
 
   public void confirmDeletion() {
     click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
     alertOK();
+//    sleepSeconds(1);
   }
 
+  public void createContact(ContactData contact, boolean b) {
+    gotoAddContact();
+    fillContactForm(contact, true);
+    submitContactCreation();
+    returnToHomePage();
+  }
+
+  public boolean isThereAContact() {
+  return isElementPresent(By.name("selected[]"));
+
+  }
+
+  /**
+   * Проверяем удаление контакта
+   */
+  public void checkDeleted() {
+     findElementByCss(".msgbox");
+  }
 }
